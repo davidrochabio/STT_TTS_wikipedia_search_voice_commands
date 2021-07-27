@@ -110,7 +110,13 @@ if __name__ == "__main__":
     while True:
 
         search = listen(recognizer, microphone, "Não entendi, poderia repetir?")
-        
+        if search == 'Desculpe, houve um erro':
+            frase = "A aplicação foi finalizada"
+            print('')
+            print('##################################################')
+            print('')
+            write_speak(engine,frase)
+            sys.exit(0)
         
         print('')
         print('###################################################')
